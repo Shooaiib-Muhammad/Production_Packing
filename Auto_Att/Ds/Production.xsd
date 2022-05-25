@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Production" targetNamespace="http://tempuri.org/Production.xsd" xmlns:mstns="http://tempuri.org/Production.xsd" xmlns="http://tempuri.org/Production.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.Auto_Att.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Pro_Article_BarCodeTableAdapter" GeneratorDataComponentClassName="View_Pro_Article_BarCodeTableAdapter" Name="View_Pro_Article_BarCode" UserDataComponentName="View_Pro_Article_BarCodeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="MIS.dbo.View_Pro_Article_BarCode" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        View_Pro_Article_BarCode.*
+FROM            View_Pro_Article_BarCode</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FactoryCode" DataSetColumn="FactoryCode" />
+              <Mapping SourceColumn="ModelNo" DataSetColumn="ModelNo" />
+              <Mapping SourceColumn="ModelName" DataSetColumn="ModelName" />
+              <Mapping SourceColumn="ArtCode" DataSetColumn="ArtCode" />
+              <Mapping SourceColumn="Size" DataSetColumn="Size" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="ClientID" DataSetColumn="ClientID" />
+              <Mapping SourceColumn="ModelID" DataSetColumn="ModelID" />
+              <Mapping SourceColumn="ArtID" DataSetColumn="ArtID" />
+              <Mapping SourceColumn="ArtImage" DataSetColumn="ArtImage" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Pro_Article_BarCode_TransactionsTableAdapter" GeneratorDataComponentClassName="tbl_Pro_Article_BarCode_TransactionsTableAdapter" Name="tbl_Pro_Article_BarCode_Transactions" UserDataComponentName="tbl_Pro_Article_BarCode_TransactionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="MIS.dbo.tbl_Pro_Article_BarCode_Transactions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_Pro_Article_BarCode_Transactions] WHERE (([TranID] = ?) AND ([ClientID] = ?) AND ([ModelID] = ?) AND ([ArtID] = ?) AND ((? = 1 AND [Size] IS NULL) OR ([Size] = ?)) AND ((? = 1 AND [Type] IS NULL) OR ([Type] = ?)) AND ((? = 1 AND [Count] IS NULL) OR ([Count] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [TransactionTime] IS NULL) OR ([TransactionTime] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Size" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Size" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TransactionTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_TransactionTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_Pro_Article_BarCode_Transactions] ([ClientID], [ModelID], [ArtID], [Size], [Type], [Count], [EntryDate], [TransactionTime]) VALUES (?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Size" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="TransactionTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_Pro_Article_BarCode_Transactions.*
+FROM            tbl_Pro_Article_BarCode_Transactions</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_Pro_Article_BarCode_Transactions] SET [ClientID] = ?, [ModelID] = ?, [ArtID] = ?, [Size] = ?, [Type] = ?, [Count] = ?, [EntryDate] = ?, [TransactionTime] = ? WHERE (([TranID] = ?) AND ([ClientID] = ?) AND ([ModelID] = ?) AND ([ArtID] = ?) AND ((? = 1 AND [Size] IS NULL) OR ([Size] = ?)) AND ((? = 1 AND [Type] IS NULL) OR ([Type] = ?)) AND ((? = 1 AND [Count] IS NULL) OR ([Count] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [TransactionTime] IS NULL) OR ([TransactionTime] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Size" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="TransactionTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Size" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Size" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Size" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Count" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TransactionTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_TransactionTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransactionTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+              <Mapping SourceColumn="ClientID" DataSetColumn="ClientID" />
+              <Mapping SourceColumn="ModelID" DataSetColumn="ModelID" />
+              <Mapping SourceColumn="ArtID" DataSetColumn="ArtID" />
+              <Mapping SourceColumn="Size" DataSetColumn="Size" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Count" DataSetColumn="Count" />
+              <Mapping SourceColumn="EntryDate" DataSetColumn="EntryDate" />
+              <Mapping SourceColumn="TransactionTime" DataSetColumn="TransactionTime" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Production" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Production" msprop:Generator_DataSetName="Production">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Pro_Article_BarCode" msprop:Generator_RowEvHandlerName="View_Pro_Article_BarCodeRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Pro_Article_BarCodeRowDeleted" msprop:Generator_RowDeletingName="View_Pro_Article_BarCodeRowDeleting" msprop:Generator_RowEvArgName="View_Pro_Article_BarCodeRowChangeEvent" msprop:Generator_TablePropName="View_Pro_Article_BarCode" msprop:Generator_RowChangedName="View_Pro_Article_BarCodeRowChanged" msprop:Generator_RowChangingName="View_Pro_Article_BarCodeRowChanging" msprop:Generator_TableClassName="View_Pro_Article_BarCodeDataTable" msprop:Generator_RowClassName="View_Pro_Article_BarCodeRow" msprop:Generator_TableVarName="tableView_Pro_Article_BarCode" msprop:Generator_UserTableName="View_Pro_Article_BarCode">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FactoryCode" msprop:Generator_ColumnPropNameInRow="FactoryCode" msprop:Generator_ColumnPropNameInTable="FactoryCodeColumn" msprop:Generator_ColumnVarNameInTable="columnFactoryCode" msprop:Generator_UserColumnName="FactoryCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModelNo" msprop:Generator_ColumnPropNameInRow="ModelNo" msprop:Generator_ColumnPropNameInTable="ModelNoColumn" msprop:Generator_ColumnVarNameInTable="columnModelNo" msprop:Generator_UserColumnName="ModelNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModelName" msprop:Generator_ColumnPropNameInRow="ModelName" msprop:Generator_ColumnPropNameInTable="ModelNameColumn" msprop:Generator_ColumnVarNameInTable="columnModelName" msprop:Generator_UserColumnName="ModelName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArtCode" msprop:Generator_ColumnPropNameInRow="ArtCode" msprop:Generator_ColumnPropNameInTable="ArtCodeColumn" msprop:Generator_ColumnVarNameInTable="columnArtCode" msprop:Generator_UserColumnName="ArtCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Size" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_UserColumnName="Size" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_UserColumnName="Barcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_UserColumnName="ClientID" type="xs:int" />
+              <xs:element name="ModelID" msprop:Generator_ColumnPropNameInRow="ModelID" msprop:Generator_ColumnPropNameInTable="ModelIDColumn" msprop:Generator_ColumnVarNameInTable="columnModelID" msprop:Generator_UserColumnName="ModelID" type="xs:int" />
+              <xs:element name="ArtID" msprop:Generator_ColumnPropNameInRow="ArtID" msprop:Generator_ColumnPropNameInTable="ArtIDColumn" msprop:Generator_ColumnVarNameInTable="columnArtID" msprop:Generator_UserColumnName="ArtID" type="xs:int" />
+              <xs:element name="ArtImage" msprop:Generator_ColumnPropNameInRow="ArtImage" msprop:Generator_ColumnPropNameInTable="ArtImageColumn" msprop:Generator_ColumnVarNameInTable="columnArtImage" msprop:Generator_UserColumnName="ArtImage" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Pro_Article_BarCode_Transactions" msprop:Generator_RowEvHandlerName="tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Pro_Article_BarCode_TransactionsRowDeleted" msprop:Generator_RowDeletingName="tbl_Pro_Article_BarCode_TransactionsRowDeleting" msprop:Generator_RowEvArgName="tbl_Pro_Article_BarCode_TransactionsRowChangeEvent" msprop:Generator_TablePropName="tbl_Pro_Article_BarCode_Transactions" msprop:Generator_RowChangedName="tbl_Pro_Article_BarCode_TransactionsRowChanged" msprop:Generator_RowChangingName="tbl_Pro_Article_BarCode_TransactionsRowChanging" msprop:Generator_TableClassName="tbl_Pro_Article_BarCode_TransactionsDataTable" msprop:Generator_RowClassName="tbl_Pro_Article_BarCode_TransactionsRow" msprop:Generator_TableVarName="tabletbl_Pro_Article_BarCode_Transactions" msprop:Generator_UserTableName="tbl_Pro_Article_BarCode_Transactions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_ColumnVarNameInTable="columnTranID" msprop:Generator_UserColumnName="TranID" type="xs:int" />
+              <xs:element name="ClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_UserColumnName="ClientID" type="xs:int" />
+              <xs:element name="ModelID" msprop:Generator_ColumnPropNameInRow="ModelID" msprop:Generator_ColumnPropNameInTable="ModelIDColumn" msprop:Generator_ColumnVarNameInTable="columnModelID" msprop:Generator_UserColumnName="ModelID" type="xs:int" />
+              <xs:element name="ArtID" msprop:Generator_ColumnPropNameInRow="ArtID" msprop:Generator_ColumnPropNameInTable="ArtIDColumn" msprop:Generator_ColumnVarNameInTable="columnArtID" msprop:Generator_UserColumnName="ArtID" type="xs:int" />
+              <xs:element name="Size" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_UserColumnName="Size" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Count" msprop:Generator_ColumnPropNameInRow="Count" msprop:Generator_ColumnPropNameInTable="CountColumn" msprop:Generator_ColumnVarNameInTable="columnCount" msprop:Generator_UserColumnName="Count" type="xs:int" minOccurs="0" />
+              <xs:element name="EntryDate" msprop:Generator_ColumnPropNameInRow="EntryDate" msprop:Generator_ColumnPropNameInTable="EntryDateColumn" msprop:Generator_ColumnVarNameInTable="columnEntryDate" msprop:Generator_UserColumnName="EntryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TransactionTime" msprop:Generator_ColumnPropNameInRow="TransactionTime" msprop:Generator_ColumnPropNameInTable="TransactionTimeColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionTime" msprop:Generator_UserColumnName="TransactionTime" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Pro_Article_BarCode_Transactions" />
+      <xs:field xpath="mstns:TranID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

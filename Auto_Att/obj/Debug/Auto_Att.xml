@@ -1,0 +1,661 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Auto_Att
+</name>
+</assembly>
+<members>
+<member name="T:Auto_Att.DsAutoAtt">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_HRM_Emp_Att_MealDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_AttDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_Att1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.View_Rpt_HR_ActiveCardCopyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Comp_InfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_HRM_Emp_Att_MealRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_AttRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_Att1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.View_Rpt_HR_ActiveCardCopyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Comp_InfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_HRM_Emp_Att_MealRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_AttRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Hrm_Emp_Att1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.View_Rpt_HR_ActiveCardCopyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAtt.tbl_Comp_InfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.tbl_HRM_Emp_Att_MealTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.tbl_Hrm_Emp_AttTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.tbl_Hrm_Emp_Att1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.View_Rpt_HR_ActiveCardCopyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.tbl_Comp_InfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.UpdateUpdatedRows(Auto_Att.DsAutoAtt,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.UpdateInsertedRows(Auto_Att.DsAutoAtt,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.UpdateDeletedRows(Auto_Att.DsAutoAtt,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.UpdateAll(Auto_Att.DsAutoAtt)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Auto_Att.DsAutoAttTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.View_BUS_InfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.tbl_Bus_AttDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.View_BUS_InfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.tbl_Bus_AttRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.View_BUS_InfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSBuses.tbl_Bus_AttRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSBusesTableAdapters.View_BUS_InfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBusesTableAdapters.tbl_Bus_AttTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBusesTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Auto_Att.DSBusesTableAdapters.TableAdapterManager.UpdateUpdatedRows(Auto_Att.DSBuses,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSBusesTableAdapters.TableAdapterManager.UpdateInsertedRows(Auto_Att.DSBuses,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSBusesTableAdapters.TableAdapterManager.UpdateDeletedRows(Auto_Att.DSBuses,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSBusesTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Auto_Att.DSBusesTableAdapters.TableAdapterManager.UpdateAll(Auto_Att.DSBuses)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Auto_Att.DSBusesTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Auto_Att.DSBusesTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_Emp_AttDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_LongLeavesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_ShiftDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_FinancialPeriodDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_CardDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidCasualSumDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidMadicalSumDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_AnnualLeaveTransactionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Active_CardsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_HolidaysDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_ShortLeavesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Leave_ReasonDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_All_EmployeesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Shift1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceSpecialDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_Emp_AttRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_LongLeavesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_ShiftRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_FinancialPeriodRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_CardRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidCasualSumRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidMadicalSumRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_AnnualLeaveTransactionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Active_CardsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_HolidaysRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_ShortLeavesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Leave_ReasonRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card2Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_All_EmployeesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Shift1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceSpecialRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_Emp_AttRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_LongLeavesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_ShiftRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_FinancialPeriodRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_CardRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidCasualSumRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Rpt_PayRoll_PaidMadicalSumRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Acc_AnnualLeaveTransactionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_Active_CardsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Hrm_HolidaysRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_PayRoll_ShortLeavesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Leave_ReasonRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Card2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.View_All_EmployeesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_HRM_Shift1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRoll.tbl_Att_DeviceSpecialRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Hrm_Emp_AttTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_PayRoll_LongLeavesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_ShiftTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Acc_FinancialPeriodTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_CardTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_Card1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.View_Rpt_PayRoll_PaidCasualSumTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.View_Rpt_PayRoll_PaidMadicalSumTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Acc_AnnualLeaveTransactionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.View_Active_CardsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Hrm_HolidaysTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Att_DeviceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_PayRoll_ShortLeavesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_Leave_ReasonTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_Card2TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.View_All_EmployeesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_HRM_Shift1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.tbl_Att_DeviceSpecialTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.UpdateUpdatedRows(Auto_Att.DSPayRoll,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.UpdateInsertedRows(Auto_Att.DSPayRoll,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.UpdateDeletedRows(Auto_Att.DSPayRoll,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.UpdateAll(Auto_Att.DSPayRoll)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Auto_Att.DSPayRollTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Auto_Att.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Auto_Att.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Auto_Att.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>
