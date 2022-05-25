@@ -121,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPayRoll.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ds\Production.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Production.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +203,17 @@
     </None>
     <None Include="Ds\DSPayRoll.xss">
       <DependentUpon>DSPayRoll.xsd</DependentUpon>
+    </None>
+    <None Include="Ds\Production.xsc">
+      <DependentUpon>Production.xsd</DependentUpon>
+    </None>
+    <None Include="Ds\Production.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Production.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Ds\Production.xss">
+      <DependentUpon>Production.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

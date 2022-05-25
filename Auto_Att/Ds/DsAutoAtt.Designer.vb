@@ -2038,7 +2038,7 @@ Partial Public Class DsAutoAtt
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_Comp_InfoRow
             Get
-                Return CType(Me.Rows(index),tbl_Comp_InfoRow)
+                'Return CType(Me.Rows(index),tbl_Comp_InfoRow)
             End Get
         End Property
         
