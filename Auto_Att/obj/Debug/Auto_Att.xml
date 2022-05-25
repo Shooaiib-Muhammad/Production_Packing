@@ -22,6 +22,11 @@ Auto_Att
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Auto_Att.My.Resources.Resources.Forward1212">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:Auto_Att.DsAutoAtt">
 <summary>
 Represents a strongly typed in-memory cache of data.

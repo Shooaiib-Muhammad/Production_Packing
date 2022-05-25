@@ -213,7 +213,7 @@ Public Class frmAutoAttendence
     End Sub
 
     Private Sub frmAutoAttendence_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        lblDate.Text = Now.Date
         Label1.Text = " Production Packing"
         Dim cn As OdbcConnection
         Dim Obj As New UtilityClass()
@@ -262,5 +262,9 @@ Public Class frmAutoAttendence
         End Try
 
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
     End Sub
 End Class

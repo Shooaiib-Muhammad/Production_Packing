@@ -42,6 +42,8 @@ Partial Class frmAutoAttendence
         Me.DSAutoAtt = New Auto_Att.DsAutoAtt()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.EmpPicPictureBox = New System.Windows.Forms.PictureBox()
+        Me.View_Pro_Article_BarCodeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Production = New Auto_Att.Production()
         Me.MyTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.clock = New System.Windows.Forms.Label()
@@ -82,8 +84,6 @@ Partial Class frmAutoAttendence
         Me.View_Rpt_HR_ActiveCardCopyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_Rpt_HR_ActiveCardCopyTableAdapter = New Auto_Att.DsAutoAttTableAdapters.View_Rpt_HR_ActiveCardCopyTableAdapter()
         Me.Tbl_Comp_InfoTableAdapter = New Auto_Att.DsAutoAttTableAdapters.tbl_Comp_InfoTableAdapter()
-        Me.View_Pro_Article_BarCodeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Production = New Auto_Att.Production()
         Me.View_Pro_Article_BarCodeTableAdapter = New Auto_Att.ProductionTableAdapters.View_Pro_Article_BarCodeTableAdapter()
         Me.TableAdapterManager3 = New Auto_Att.ProductionTableAdapters.TableAdapterManager()
         Me.Tbl_Pro_Article_BarCode_TransactionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -91,6 +91,7 @@ Partial Class frmAutoAttendence
         Me.View_Production_PackingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_Production_PackingTableAdapter = New Auto_Att.ProductionTableAdapters.view_Production_PackingTableAdapter()
         Me.CountLabel1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CardNoLabel = New System.Windows.Forms.Label()
         EmpPicLabel = New System.Windows.Forms.Label()
         NICLabel = New System.Windows.Forms.Label()
@@ -106,6 +107,8 @@ Partial Class frmAutoAttendence
         CType(Me.DSAutoAtt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.EmpPicPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.View_Pro_Article_BarCodeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Production, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.View_All_EmployeesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,8 +119,6 @@ Partial Class frmAutoAttendence
         CType(Me.Tbl_Hrm_Emp_AttBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_Hrm_Emp_Att1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Rpt_HR_ActiveCardCopyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.View_Pro_Article_BarCodeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Production, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_Pro_Article_BarCode_TransactionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Production_PackingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -140,7 +141,7 @@ Partial Class frmAutoAttendence
         EmpPicLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         EmpPicLabel.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         EmpPicLabel.ForeColor = System.Drawing.Color.White
-        EmpPicLabel.Location = New System.Drawing.Point(820, 49)
+        EmpPicLabel.Location = New System.Drawing.Point(457, 50)
         EmpPicLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         EmpPicLabel.Name = "EmpPicLabel"
         EmpPicLabel.Size = New System.Drawing.Size(180, 29)
@@ -208,6 +209,19 @@ Partial Class frmAutoAttendence
         Label12.Text = "Size :"
         Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'CountLabel
+        '
+        CountLabel.BackColor = System.Drawing.SystemColors.HotTrack
+        CountLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        CountLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CountLabel.ForeColor = System.Drawing.Color.White
+        CountLabel.Location = New System.Drawing.Point(644, 51)
+        CountLabel.Name = "CountLabel"
+        CountLabel.Size = New System.Drawing.Size(161, 31)
+        CountLabel.TabIndex = 65
+        CountLabel.Text = "Count"
+        CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'TriggerTimer
         '
         Me.TriggerTimer.Interval = 1000
@@ -219,7 +233,7 @@ Partial Class frmAutoAttendence
         Me.Panel4.Controls.Add(Me.txtCardNo)
         Me.Panel4.Location = New System.Drawing.Point(16, 49)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(221, 88)
+        Me.Panel4.Size = New System.Drawing.Size(434, 88)
         Me.Panel4.TabIndex = 52
         '
         'Label7
@@ -230,7 +244,7 @@ Partial Class frmAutoAttendence
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
         Me.Label7.Location = New System.Drawing.Point(0, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(219, 20)
+        Me.Label7.Size = New System.Drawing.Size(432, 20)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Barcode Terminal"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -243,7 +257,7 @@ Partial Class frmAutoAttendence
         Me.txtCardNo.Location = New System.Drawing.Point(23, 40)
         Me.txtCardNo.Name = "txtCardNo"
         Me.txtCardNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtCardNo.Size = New System.Drawing.Size(174, 23)
+        Me.txtCardNo.Size = New System.Drawing.Size(383, 23)
         Me.txtCardNo.TabIndex = 0
         Me.txtCardNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -254,7 +268,7 @@ Partial Class frmAutoAttendence
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.LogoPictureBox1)
-        Me.Panel5.Location = New System.Drawing.Point(623, 143)
+        Me.Panel5.Location = New System.Drawing.Point(811, 52)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(190, 134)
         Me.Panel5.TabIndex = 61
@@ -262,8 +276,10 @@ Partial Class frmAutoAttendence
         'LogoPictureBox1
         '
         Me.LogoPictureBox1.BackColor = System.Drawing.SystemColors.InactiveBorder
+        Me.LogoPictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LogoPictureBox1.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.Tbl_Comp_InfoBindingSource, "Logo", True))
         Me.LogoPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogoPictureBox1.Image = Global.Auto_Att.My.Resources.Resources.Forward1212
         Me.LogoPictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox1.Name = "LogoPictureBox1"
         Me.LogoPictureBox1.Size = New System.Drawing.Size(188, 132)
@@ -286,7 +302,7 @@ Partial Class frmAutoAttendence
         Me.Panel3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.EmpPicPictureBox)
-        Me.Panel3.Location = New System.Drawing.Point(820, 81)
+        Me.Panel3.Location = New System.Drawing.Point(457, 82)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(180, 194)
         Me.Panel3.TabIndex = 60
@@ -302,6 +318,16 @@ Partial Class frmAutoAttendence
         Me.EmpPicPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.EmpPicPictureBox.TabIndex = 46
         Me.EmpPicPictureBox.TabStop = False
+        '
+        'View_Pro_Article_BarCodeBindingSource
+        '
+        Me.View_Pro_Article_BarCodeBindingSource.DataMember = "View_Pro_Article_BarCode"
+        Me.View_Pro_Article_BarCodeBindingSource.DataSource = Me.Production
+        '
+        'Production
+        '
+        Me.Production.DataSetName = "Production"
+        Me.Production.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MyTimer
         '
@@ -367,6 +393,7 @@ Partial Class frmAutoAttendence
         Me.lblTime.Size = New System.Drawing.Size(206, 28)
         Me.lblTime.TabIndex = 16
         Me.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTime.Visible = False
         '
         'Label3
         '
@@ -379,6 +406,7 @@ Partial Class frmAutoAttendence
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Packing Time:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Visible = False
         '
         'lblMsg
         '
@@ -386,11 +414,12 @@ Partial Class frmAutoAttendence
         Me.lblMsg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblMsg.Font = New System.Drawing.Font("Georgia", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMsg.ForeColor = System.Drawing.Color.Maroon
-        Me.lblMsg.Location = New System.Drawing.Point(243, 49)
+        Me.lblMsg.Location = New System.Drawing.Point(1037, 526)
         Me.lblMsg.Name = "lblMsg"
-        Me.lblMsg.Size = New System.Drawing.Size(570, 87)
+        Me.lblMsg.Size = New System.Drawing.Size(73, 87)
         Me.lblMsg.TabIndex = 55
         Me.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblMsg.Visible = False
         '
         'ClearTimer
         '
@@ -398,13 +427,13 @@ Partial Class frmAutoAttendence
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label1.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Georgia", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1207, 40)
+        Me.Label1.Size = New System.Drawing.Size(1013, 40)
         Me.Label1.TabIndex = 54
         Me.Label1.Text = "Production Packing"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -525,11 +554,12 @@ Partial Class frmAutoAttendence
         Me.mylbl.BackColor = System.Drawing.SystemColors.Control
         Me.mylbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.mylbl.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mylbl.Location = New System.Drawing.Point(455, 143)
+        Me.mylbl.Location = New System.Drawing.Point(1022, 486)
         Me.mylbl.Name = "mylbl"
         Me.mylbl.Size = New System.Drawing.Size(77, 26)
         Me.mylbl.TabIndex = 53
         Me.mylbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.mylbl.Visible = False
         '
         'View_All_EmployeesBindingSource
         '
@@ -665,16 +695,6 @@ Partial Class frmAutoAttendence
         '
         Me.Tbl_Comp_InfoTableAdapter.ClearBeforeFill = True
         '
-        'View_Pro_Article_BarCodeBindingSource
-        '
-        Me.View_Pro_Article_BarCodeBindingSource.DataMember = "View_Pro_Article_BarCode"
-        Me.View_Pro_Article_BarCodeBindingSource.DataSource = Me.Production
-        '
-        'Production
-        '
-        Me.Production.DataSetName = "Production"
-        Me.Production.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'View_Pro_Article_BarCodeTableAdapter
         '
         Me.View_Pro_Article_BarCodeTableAdapter.ClearBeforeFill = True
@@ -704,37 +724,38 @@ Partial Class frmAutoAttendence
         '
         Me.View_Production_PackingTableAdapter.ClearBeforeFill = True
         '
-        'CountLabel
-        '
-        CountLabel.BackColor = System.Drawing.SystemColors.HotTrack
-        CountLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        CountLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CountLabel.ForeColor = System.Drawing.Color.White
-        CountLabel.Location = New System.Drawing.Point(1007, 50)
-        CountLabel.Name = "CountLabel"
-        CountLabel.Size = New System.Drawing.Size(161, 31)
-        CountLabel.TabIndex = 65
-        CountLabel.Text = "Count"
-        CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'CountLabel1
         '
         Me.CountLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CountLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.View_Production_PackingBindingSource, "Count", True))
         Me.CountLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 35.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CountLabel1.Location = New System.Drawing.Point(1007, 81)
+        Me.CountLabel1.Location = New System.Drawing.Point(644, 82)
         Me.CountLabel1.Name = "CountLabel1"
-        Me.CountLabel1.Size = New System.Drawing.Size(161, 114)
+        Me.CountLabel1.Size = New System.Drawing.Size(161, 147)
         Me.CountLabel1.TabIndex = 66
         Me.CountLabel1.Text = "Label10"
         Me.CountLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(780, 621)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(220, 44)
+        Me.Button2.TabIndex = 68
+        Me.Button2.Text = "EXIT"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'frmAutoAttendence
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1207, 860)
+        Me.ClientSize = New System.Drawing.Size(1013, 676)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(CountLabel)
         Me.Controls.Add(Me.CountLabel1)
         Me.Controls.Add(Me.Label9)
@@ -750,7 +771,7 @@ Partial Class frmAutoAttendence
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.mylbl)
         Me.Name = "frmAutoAttendence"
-        Me.Text = "frmAutoAttendence"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
@@ -759,6 +780,8 @@ Partial Class frmAutoAttendence
         CType(Me.DSAutoAtt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         CType(Me.EmpPicPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.View_Pro_Article_BarCodeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Production, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -770,8 +793,6 @@ Partial Class frmAutoAttendence
         CType(Me.Tbl_Hrm_Emp_AttBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_Hrm_Emp_Att1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Rpt_HR_ActiveCardCopyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.View_Pro_Article_BarCodeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Production, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_Pro_Article_BarCode_TransactionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Production_PackingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -839,4 +860,5 @@ Partial Class frmAutoAttendence
     Friend WithEvents View_Production_PackingBindingSource As BindingSource
     Friend WithEvents View_Production_PackingTableAdapter As ProductionTableAdapters.view_Production_PackingTableAdapter
     Friend WithEvents CountLabel1 As Label
+    Friend WithEvents Button2 As Button
 End Class
