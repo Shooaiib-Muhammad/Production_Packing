@@ -96,6 +96,7 @@ Public Class frmAutoAttendence
 
         Try
             Me.Tbl_Pro_Article_BarCode_TransactionsTableAdapter.Insert(Label4.Text, Label5.Text, Label9.Text, Label11.Text, Label8.Text, 1, Now.Date, Now, "Packing", NICLabel2.Text)
+            txtCardNo.Text = ""
             loaddata()
         Catch ex As Exception
 
@@ -169,26 +170,30 @@ Public Class frmAutoAttendence
 
         barCodeNo = txtCardNo.Text
         If barCodeNo.Length > 0 Then
+            'If barCodeNo.Length = 13 Then
             myinterval = 3
-            MyTimer.Enabled = True
-            MyTimer.Enabled = False
-            Try
-                MyDate = System.DateTime.Now.Date.ToShortDateString()
-                MyTime = System.DateTime.Now.ToShortTimeString()
+                MyTimer.Enabled = True
+                MyTimer.Enabled = False
+                Try
+                    MyDate = System.DateTime.Now.Date.ToShortDateString()
+                    MyTime = System.DateTime.Now.ToShortTimeString()
 
-                Me.View_Pro_Article_BarCodeTableAdapter.Fill(Me.Production.View_Pro_Article_BarCode, barCodeNo)
-                Entry(barCodeNo)
 
-            Catch ex As Exception
-                lblMsg.ForeColor = Color.Maroon
-                lblMsg.Text = "Bar Code..."
+                    Me.View_Pro_Article_BarCodeTableAdapter.Fill(Me.Production.View_Pro_Article_BarCode, barCodeNo)
+                    Entry(barCodeNo)
 
-                lblDate.Text = ""
-                lblTime.Text = ""
-            Finally
-                txtCardNo.Text = ""
+                Catch ex As Exception
+                    lblMsg.ForeColor = Color.Maroon
+                    lblMsg.Text = "Bar Code..."
+
+                    lblDate.Text = ""
+                    lblTime.Text = ""
+                Finally
+                'txtCardNo.Text = ""
             End Try
-        End If
+            End If
+
+        'End If
 
     End Sub
 
@@ -230,6 +235,7 @@ Public Class frmAutoAttendence
         Timer1 = New Timer
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
         Timer1.Start()
+        loaddata()
     End Sub
 
     Private Sub TriggerTimer_Tick(sender As Object, e As EventArgs) Handles TriggerTimer.Tick
@@ -256,7 +262,7 @@ Public Class frmAutoAttendence
 
     Private Sub loaddata()
         Try
-            Me.View_Production_PackingTableAdapter.Fill(Me.Production.view_Production_Packing, Now.Date, Label4.Text, Label5.Text, Label9.Text)
+            Me.View_Production_PackingTableAdapter.Fill(Me.Production.view_Production_Packing, Now.Date.Day, Now.Date.Month, Now.Date.Year, NICLabel2.Text)
         Catch ex As Exception
 
         End Try

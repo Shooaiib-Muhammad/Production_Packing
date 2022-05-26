@@ -20,16 +20,14 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("Production"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DSPacking"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class Production
+Partial Public Class DSPacking
     Inherits Global.System.Data.DataSet
     
-    Private tableView_Pro_Article_BarCode As View_Pro_Article_BarCodeDataTable
+    Private tableView_Pro_Article_BarCode_final As View_Pro_Article_BarCode_finalDataTable
     
-    Private tabletbl_Pro_Article_BarCode_Transactions As tbl_Pro_Article_BarCode_TransactionsDataTable
-    
-    Private tableview_Production_Packing As view_Production_PackingDataTable
+    Private tabletbl_Pro_Article_BarCode_Transactions_final As tbl_Pro_Article_BarCode_Transactions_finalDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -60,14 +58,11 @@ Partial Public Class Production
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("View_Pro_Article_BarCode")) Is Nothing) Then
-                MyBase.Tables.Add(New View_Pro_Article_BarCodeDataTable(ds.Tables("View_Pro_Article_BarCode")))
+            If (Not (ds.Tables("View_Pro_Article_BarCode_final")) Is Nothing) Then
+                MyBase.Tables.Add(New View_Pro_Article_BarCode_finalDataTable(ds.Tables("View_Pro_Article_BarCode_final")))
             End If
-            If (Not (ds.Tables("tbl_Pro_Article_BarCode_Transactions")) Is Nothing) Then
-                MyBase.Tables.Add(New tbl_Pro_Article_BarCode_TransactionsDataTable(ds.Tables("tbl_Pro_Article_BarCode_Transactions")))
-            End If
-            If (Not (ds.Tables("view_Production_Packing")) Is Nothing) Then
-                MyBase.Tables.Add(New view_Production_PackingDataTable(ds.Tables("view_Production_Packing")))
+            If (Not (ds.Tables("tbl_Pro_Article_BarCode_Transactions_final")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_Pro_Article_BarCode_Transactions_finalDataTable(ds.Tables("tbl_Pro_Article_BarCode_Transactions_final")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -90,9 +85,9 @@ Partial Public Class Production
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property View_Pro_Article_BarCode() As View_Pro_Article_BarCodeDataTable
+    Public ReadOnly Property View_Pro_Article_BarCode_final() As View_Pro_Article_BarCode_finalDataTable
         Get
-            Return Me.tableView_Pro_Article_BarCode
+            Return Me.tableView_Pro_Article_BarCode_final
         End Get
     End Property
     
@@ -100,19 +95,9 @@ Partial Public Class Production
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbl_Pro_Article_BarCode_Transactions() As tbl_Pro_Article_BarCode_TransactionsDataTable
+    Public ReadOnly Property tbl_Pro_Article_BarCode_Transactions_final() As tbl_Pro_Article_BarCode_Transactions_finalDataTable
         Get
-            Return Me.tabletbl_Pro_Article_BarCode_Transactions
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property view_Production_Packing() As view_Production_PackingDataTable
-        Get
-            Return Me.tableview_Production_Packing
+            Return Me.tabletbl_Pro_Article_BarCode_Transactions_final
         End Get
     End Property
     
@@ -158,7 +143,7 @@ Partial Public Class Production
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As Production = CType(MyBase.Clone,Production)
+        Dim cln As DSPacking = CType(MyBase.Clone,DSPacking)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -183,14 +168,11 @@ Partial Public Class Production
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("View_Pro_Article_BarCode")) Is Nothing) Then
-                MyBase.Tables.Add(New View_Pro_Article_BarCodeDataTable(ds.Tables("View_Pro_Article_BarCode")))
+            If (Not (ds.Tables("View_Pro_Article_BarCode_final")) Is Nothing) Then
+                MyBase.Tables.Add(New View_Pro_Article_BarCode_finalDataTable(ds.Tables("View_Pro_Article_BarCode_final")))
             End If
-            If (Not (ds.Tables("tbl_Pro_Article_BarCode_Transactions")) Is Nothing) Then
-                MyBase.Tables.Add(New tbl_Pro_Article_BarCode_TransactionsDataTable(ds.Tables("tbl_Pro_Article_BarCode_Transactions")))
-            End If
-            If (Not (ds.Tables("view_Production_Packing")) Is Nothing) Then
-                MyBase.Tables.Add(New view_Production_PackingDataTable(ds.Tables("view_Production_Packing")))
+            If (Not (ds.Tables("tbl_Pro_Article_BarCode_Transactions_final")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_Pro_Article_BarCode_Transactions_finalDataTable(ds.Tables("tbl_Pro_Article_BarCode_Transactions_final")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -224,22 +206,16 @@ Partial Public Class Production
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableView_Pro_Article_BarCode = CType(MyBase.Tables("View_Pro_Article_BarCode"),View_Pro_Article_BarCodeDataTable)
+        Me.tableView_Pro_Article_BarCode_final = CType(MyBase.Tables("View_Pro_Article_BarCode_final"),View_Pro_Article_BarCode_finalDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableView_Pro_Article_BarCode) Is Nothing) Then
-                Me.tableView_Pro_Article_BarCode.InitVars
+            If (Not (Me.tableView_Pro_Article_BarCode_final) Is Nothing) Then
+                Me.tableView_Pro_Article_BarCode_final.InitVars
             End If
         End If
-        Me.tabletbl_Pro_Article_BarCode_Transactions = CType(MyBase.Tables("tbl_Pro_Article_BarCode_Transactions"),tbl_Pro_Article_BarCode_TransactionsDataTable)
+        Me.tabletbl_Pro_Article_BarCode_Transactions_final = CType(MyBase.Tables("tbl_Pro_Article_BarCode_Transactions_final"),tbl_Pro_Article_BarCode_Transactions_finalDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletbl_Pro_Article_BarCode_Transactions) Is Nothing) Then
-                Me.tabletbl_Pro_Article_BarCode_Transactions.InitVars
-            End If
-        End If
-        Me.tableview_Production_Packing = CType(MyBase.Tables("view_Production_Packing"),view_Production_PackingDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableview_Production_Packing) Is Nothing) Then
-                Me.tableview_Production_Packing.InitVars
+            If (Not (Me.tabletbl_Pro_Article_BarCode_Transactions_final) Is Nothing) Then
+                Me.tabletbl_Pro_Article_BarCode_Transactions_final.InitVars
             End If
         End If
     End Sub
@@ -247,34 +223,26 @@ Partial Public Class Production
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "Production"
+        Me.DataSetName = "DSPacking"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/Production.xsd"
+        Me.Namespace = "http://tempuri.org/DSPacking.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableView_Pro_Article_BarCode = New View_Pro_Article_BarCodeDataTable()
-        MyBase.Tables.Add(Me.tableView_Pro_Article_BarCode)
-        Me.tabletbl_Pro_Article_BarCode_Transactions = New tbl_Pro_Article_BarCode_TransactionsDataTable()
-        MyBase.Tables.Add(Me.tabletbl_Pro_Article_BarCode_Transactions)
-        Me.tableview_Production_Packing = New view_Production_PackingDataTable()
-        MyBase.Tables.Add(Me.tableview_Production_Packing)
+        Me.tableView_Pro_Article_BarCode_final = New View_Pro_Article_BarCode_finalDataTable()
+        MyBase.Tables.Add(Me.tableView_Pro_Article_BarCode_final)
+        Me.tabletbl_Pro_Article_BarCode_Transactions_final = New tbl_Pro_Article_BarCode_Transactions_finalDataTable()
+        MyBase.Tables.Add(Me.tabletbl_Pro_Article_BarCode_Transactions_final)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeView_Pro_Article_BarCode() As Boolean
+    Private Function ShouldSerializeView_Pro_Article_BarCode_final() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetbl_Pro_Article_BarCode_Transactions() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeview_Production_Packing() As Boolean
+    Private Function ShouldSerializetbl_Pro_Article_BarCode_Transactions_final() As Boolean
         Return false
     End Function
     
@@ -289,7 +257,7 @@ Partial Public Class Production
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As Production = New Production()
+        Dim ds As DSPacking = New DSPacking()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -337,21 +305,18 @@ Partial Public Class Production
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub View_Pro_Article_BarCodeRowChangeEventHandler(ByVal sender As Object, ByVal e As View_Pro_Article_BarCodeRowChangeEvent)
+    Public Delegate Sub View_Pro_Article_BarCode_finalRowChangeEventHandler(ByVal sender As Object, ByVal e As View_Pro_Article_BarCode_finalRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_Pro_Article_BarCode_TransactionsRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub view_Production_PackingRowChangeEventHandler(ByVal sender As Object, ByVal e As view_Production_PackingRowChangeEvent)
+    Public Delegate Sub tbl_Pro_Article_BarCode_Transactions_finalRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class View_Pro_Article_BarCodeDataTable
-        Inherits Global.System.Data.TypedTableBase(Of View_Pro_Article_BarCodeRow)
+    Partial Public Class View_Pro_Article_BarCode_finalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of View_Pro_Article_BarCode_finalRow)
         
         Private columnFactoryCode As Global.System.Data.DataColumn
         
@@ -379,7 +344,7 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "View_Pro_Article_BarCode"
+            Me.TableName = "View_Pro_Article_BarCode_final"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -509,44 +474,44 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As View_Pro_Article_BarCodeRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As View_Pro_Article_BarCode_finalRow
             Get
-                Return CType(Me.Rows(index),View_Pro_Article_BarCodeRow)
+                Return CType(Me.Rows(index),View_Pro_Article_BarCode_finalRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event View_Pro_Article_BarCodeRowChanging As View_Pro_Article_BarCodeRowChangeEventHandler
+        Public Event View_Pro_Article_BarCode_finalRowChanging As View_Pro_Article_BarCode_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event View_Pro_Article_BarCodeRowChanged As View_Pro_Article_BarCodeRowChangeEventHandler
+        Public Event View_Pro_Article_BarCode_finalRowChanged As View_Pro_Article_BarCode_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event View_Pro_Article_BarCodeRowDeleting As View_Pro_Article_BarCodeRowChangeEventHandler
+        Public Event View_Pro_Article_BarCode_finalRowDeleting As View_Pro_Article_BarCode_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event View_Pro_Article_BarCodeRowDeleted As View_Pro_Article_BarCodeRowChangeEventHandler
+        Public Event View_Pro_Article_BarCode_finalRowDeleted As View_Pro_Article_BarCode_finalRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddView_Pro_Article_BarCodeRow(ByVal row As View_Pro_Article_BarCodeRow)
+        Public Overloads Sub AddView_Pro_Article_BarCode_finalRow(ByVal row As View_Pro_Article_BarCode_finalRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddView_Pro_Article_BarCodeRow(ByVal FactoryCode As String, ByVal ModelNo As String, ByVal ModelName As String, ByVal ArtCode As String, ByVal Size As String, ByVal Type As String, ByVal Barcode As String, ByVal ClientID As Integer, ByVal ModelID As Integer, ByVal ArtID As Integer, ByVal ArtImage() As Byte) As View_Pro_Article_BarCodeRow
-            Dim rowView_Pro_Article_BarCodeRow As View_Pro_Article_BarCodeRow = CType(Me.NewRow,View_Pro_Article_BarCodeRow)
+        Public Overloads Function AddView_Pro_Article_BarCode_finalRow(ByVal FactoryCode As String, ByVal ModelNo As String, ByVal ModelName As String, ByVal ArtCode As String, ByVal Size As String, ByVal Type As String, ByVal Barcode As String, ByVal ClientID As Integer, ByVal ModelID As Integer, ByVal ArtID As Integer, ByVal ArtImage() As Byte) As View_Pro_Article_BarCode_finalRow
+            Dim rowView_Pro_Article_BarCode_finalRow As View_Pro_Article_BarCode_finalRow = CType(Me.NewRow,View_Pro_Article_BarCode_finalRow)
             Dim columnValuesArray() As Object = New Object() {FactoryCode, ModelNo, ModelName, ArtCode, Size, Type, Barcode, ClientID, ModelID, ArtID, ArtImage}
-            rowView_Pro_Article_BarCodeRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowView_Pro_Article_BarCodeRow)
-            Return rowView_Pro_Article_BarCodeRow
+            rowView_Pro_Article_BarCode_finalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowView_Pro_Article_BarCode_finalRow)
+            Return rowView_Pro_Article_BarCode_finalRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As View_Pro_Article_BarCodeDataTable = CType(MyBase.Clone,View_Pro_Article_BarCodeDataTable)
+            Dim cln As View_Pro_Article_BarCode_finalDataTable = CType(MyBase.Clone,View_Pro_Article_BarCode_finalDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -554,7 +519,7 @@ Partial Public Class Production
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New View_Pro_Article_BarCodeDataTable()
+            Return New View_Pro_Article_BarCode_finalDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -615,28 +580,28 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewView_Pro_Article_BarCodeRow() As View_Pro_Article_BarCodeRow
-            Return CType(Me.NewRow,View_Pro_Article_BarCodeRow)
+        Public Function NewView_Pro_Article_BarCode_finalRow() As View_Pro_Article_BarCode_finalRow
+            Return CType(Me.NewRow,View_Pro_Article_BarCode_finalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New View_Pro_Article_BarCodeRow(builder)
+            Return New View_Pro_Article_BarCode_finalRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(View_Pro_Article_BarCodeRow)
+            Return GetType(View_Pro_Article_BarCode_finalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.View_Pro_Article_BarCodeRowChangedEvent) Is Nothing) Then
-                RaiseEvent View_Pro_Article_BarCodeRowChanged(Me, New View_Pro_Article_BarCodeRowChangeEvent(CType(e.Row,View_Pro_Article_BarCodeRow), e.Action))
+            If (Not (Me.View_Pro_Article_BarCode_finalRowChangedEvent) Is Nothing) Then
+                RaiseEvent View_Pro_Article_BarCode_finalRowChanged(Me, New View_Pro_Article_BarCode_finalRowChangeEvent(CType(e.Row,View_Pro_Article_BarCode_finalRow), e.Action))
             End If
         End Sub
         
@@ -644,8 +609,8 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.View_Pro_Article_BarCodeRowChangingEvent) Is Nothing) Then
-                RaiseEvent View_Pro_Article_BarCodeRowChanging(Me, New View_Pro_Article_BarCodeRowChangeEvent(CType(e.Row,View_Pro_Article_BarCodeRow), e.Action))
+            If (Not (Me.View_Pro_Article_BarCode_finalRowChangingEvent) Is Nothing) Then
+                RaiseEvent View_Pro_Article_BarCode_finalRowChanging(Me, New View_Pro_Article_BarCode_finalRowChangeEvent(CType(e.Row,View_Pro_Article_BarCode_finalRow), e.Action))
             End If
         End Sub
         
@@ -653,8 +618,8 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.View_Pro_Article_BarCodeRowDeletedEvent) Is Nothing) Then
-                RaiseEvent View_Pro_Article_BarCodeRowDeleted(Me, New View_Pro_Article_BarCodeRowChangeEvent(CType(e.Row,View_Pro_Article_BarCodeRow), e.Action))
+            If (Not (Me.View_Pro_Article_BarCode_finalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent View_Pro_Article_BarCode_finalRowDeleted(Me, New View_Pro_Article_BarCode_finalRowChangeEvent(CType(e.Row,View_Pro_Article_BarCode_finalRow), e.Action))
             End If
         End Sub
         
@@ -662,14 +627,14 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.View_Pro_Article_BarCodeRowDeletingEvent) Is Nothing) Then
-                RaiseEvent View_Pro_Article_BarCodeRowDeleting(Me, New View_Pro_Article_BarCodeRowChangeEvent(CType(e.Row,View_Pro_Article_BarCodeRow), e.Action))
+            If (Not (Me.View_Pro_Article_BarCode_finalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent View_Pro_Article_BarCode_finalRowDeleting(Me, New View_Pro_Article_BarCode_finalRowChangeEvent(CType(e.Row,View_Pro_Article_BarCode_finalRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveView_Pro_Article_BarCodeRow(ByVal row As View_Pro_Article_BarCodeRow)
+        Public Sub RemoveView_Pro_Article_BarCode_finalRow(ByVal row As View_Pro_Article_BarCode_finalRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -678,7 +643,7 @@ Partial Public Class Production
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Production = New Production()
+            Dim ds As DSPacking = New DSPacking()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -696,7 +661,7 @@ Partial Public Class Production
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "View_Pro_Article_BarCodeDataTable"
+            attribute2.FixedValue = "View_Pro_Article_BarCode_finalDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -745,8 +710,8 @@ Partial Public Class Production
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbl_Pro_Article_BarCode_TransactionsDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbl_Pro_Article_BarCode_TransactionsRow)
+    Partial Public Class tbl_Pro_Article_BarCode_Transactions_finalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbl_Pro_Article_BarCode_Transactions_finalRow)
         
         Private columnTranID As Global.System.Data.DataColumn
         
@@ -774,7 +739,7 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tbl_Pro_Article_BarCode_Transactions"
+            Me.TableName = "tbl_Pro_Article_BarCode_Transactions_final"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -904,50 +869,50 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_Pro_Article_BarCode_TransactionsRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_Pro_Article_BarCode_Transactions_finalRow
             Get
-                Return CType(Me.Rows(index),tbl_Pro_Article_BarCode_TransactionsRow)
+                Return CType(Me.Rows(index),tbl_Pro_Article_BarCode_Transactions_finalRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbl_Pro_Article_BarCode_TransactionsRowChanging As tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler
+        Public Event tbl_Pro_Article_BarCode_Transactions_finalRowChanging As tbl_Pro_Article_BarCode_Transactions_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbl_Pro_Article_BarCode_TransactionsRowChanged As tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler
+        Public Event tbl_Pro_Article_BarCode_Transactions_finalRowChanged As tbl_Pro_Article_BarCode_Transactions_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbl_Pro_Article_BarCode_TransactionsRowDeleting As tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler
+        Public Event tbl_Pro_Article_BarCode_Transactions_finalRowDeleting As tbl_Pro_Article_BarCode_Transactions_finalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbl_Pro_Article_BarCode_TransactionsRowDeleted As tbl_Pro_Article_BarCode_TransactionsRowChangeEventHandler
+        Public Event tbl_Pro_Article_BarCode_Transactions_finalRowDeleted As tbl_Pro_Article_BarCode_Transactions_finalRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub Addtbl_Pro_Article_BarCode_TransactionsRow(ByVal row As tbl_Pro_Article_BarCode_TransactionsRow)
+        Public Overloads Sub Addtbl_Pro_Article_BarCode_Transactions_finalRow(ByVal row As tbl_Pro_Article_BarCode_Transactions_finalRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Addtbl_Pro_Article_BarCode_TransactionsRow(ByVal ClientID As Integer, ByVal ModelID As Integer, ByVal ArtID As Integer, ByVal Size As String, ByVal Type As String, ByVal Count As Integer, ByVal EntryDate As Date, ByVal TransactionTime As Date, ByVal ProcessType As String, ByVal FactoryCode As String) As tbl_Pro_Article_BarCode_TransactionsRow
-            Dim rowtbl_Pro_Article_BarCode_TransactionsRow As tbl_Pro_Article_BarCode_TransactionsRow = CType(Me.NewRow,tbl_Pro_Article_BarCode_TransactionsRow)
+        Public Overloads Function Addtbl_Pro_Article_BarCode_Transactions_finalRow(ByVal ClientID As Integer, ByVal ModelID As Integer, ByVal ArtID As Integer, ByVal Size As String, ByVal Type As String, ByVal Count As Integer, ByVal EntryDate As Date, ByVal TransactionTime As Date, ByVal ProcessType As String, ByVal FactoryCode As String) As tbl_Pro_Article_BarCode_Transactions_finalRow
+            Dim rowtbl_Pro_Article_BarCode_Transactions_finalRow As tbl_Pro_Article_BarCode_Transactions_finalRow = CType(Me.NewRow,tbl_Pro_Article_BarCode_Transactions_finalRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, ClientID, ModelID, ArtID, Size, Type, Count, EntryDate, TransactionTime, ProcessType, FactoryCode}
-            rowtbl_Pro_Article_BarCode_TransactionsRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbl_Pro_Article_BarCode_TransactionsRow)
-            Return rowtbl_Pro_Article_BarCode_TransactionsRow
+            rowtbl_Pro_Article_BarCode_Transactions_finalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbl_Pro_Article_BarCode_Transactions_finalRow)
+            Return rowtbl_Pro_Article_BarCode_Transactions_finalRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByTranID(ByVal TranID As Integer) As tbl_Pro_Article_BarCode_TransactionsRow
-            Return CType(Me.Rows.Find(New Object() {TranID}),tbl_Pro_Article_BarCode_TransactionsRow)
+        Public Function FindByTranID(ByVal TranID As Integer) As tbl_Pro_Article_BarCode_Transactions_finalRow
+            Return CType(Me.Rows.Find(New Object() {TranID}),tbl_Pro_Article_BarCode_Transactions_finalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbl_Pro_Article_BarCode_TransactionsDataTable = CType(MyBase.Clone,tbl_Pro_Article_BarCode_TransactionsDataTable)
+            Dim cln As tbl_Pro_Article_BarCode_Transactions_finalDataTable = CType(MyBase.Clone,tbl_Pro_Article_BarCode_Transactions_finalDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -955,7 +920,7 @@ Partial Public Class Production
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbl_Pro_Article_BarCode_TransactionsDataTable()
+            Return New tbl_Pro_Article_BarCode_Transactions_finalDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1017,28 +982,28 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Newtbl_Pro_Article_BarCode_TransactionsRow() As tbl_Pro_Article_BarCode_TransactionsRow
-            Return CType(Me.NewRow,tbl_Pro_Article_BarCode_TransactionsRow)
+        Public Function Newtbl_Pro_Article_BarCode_Transactions_finalRow() As tbl_Pro_Article_BarCode_Transactions_finalRow
+            Return CType(Me.NewRow,tbl_Pro_Article_BarCode_Transactions_finalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbl_Pro_Article_BarCode_TransactionsRow(builder)
+            Return New tbl_Pro_Article_BarCode_Transactions_finalRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbl_Pro_Article_BarCode_TransactionsRow)
+            Return GetType(tbl_Pro_Article_BarCode_Transactions_finalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tbl_Pro_Article_BarCode_TransactionsRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbl_Pro_Article_BarCode_TransactionsRowChanged(Me, New tbl_Pro_Article_BarCode_TransactionsRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_TransactionsRow), e.Action))
+            If (Not (Me.tbl_Pro_Article_BarCode_Transactions_finalRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbl_Pro_Article_BarCode_Transactions_finalRowChanged(Me, New tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_Transactions_finalRow), e.Action))
             End If
         End Sub
         
@@ -1046,8 +1011,8 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tbl_Pro_Article_BarCode_TransactionsRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbl_Pro_Article_BarCode_TransactionsRowChanging(Me, New tbl_Pro_Article_BarCode_TransactionsRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_TransactionsRow), e.Action))
+            If (Not (Me.tbl_Pro_Article_BarCode_Transactions_finalRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbl_Pro_Article_BarCode_Transactions_finalRowChanging(Me, New tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_Transactions_finalRow), e.Action))
             End If
         End Sub
         
@@ -1055,8 +1020,8 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tbl_Pro_Article_BarCode_TransactionsRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbl_Pro_Article_BarCode_TransactionsRowDeleted(Me, New tbl_Pro_Article_BarCode_TransactionsRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_TransactionsRow), e.Action))
+            If (Not (Me.tbl_Pro_Article_BarCode_Transactions_finalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbl_Pro_Article_BarCode_Transactions_finalRowDeleted(Me, New tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_Transactions_finalRow), e.Action))
             End If
         End Sub
         
@@ -1064,14 +1029,14 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tbl_Pro_Article_BarCode_TransactionsRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbl_Pro_Article_BarCode_TransactionsRowDeleting(Me, New tbl_Pro_Article_BarCode_TransactionsRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_TransactionsRow), e.Action))
+            If (Not (Me.tbl_Pro_Article_BarCode_Transactions_finalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbl_Pro_Article_BarCode_Transactions_finalRowDeleting(Me, New tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent(CType(e.Row,tbl_Pro_Article_BarCode_Transactions_finalRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Removetbl_Pro_Article_BarCode_TransactionsRow(ByVal row As tbl_Pro_Article_BarCode_TransactionsRow)
+        Public Sub Removetbl_Pro_Article_BarCode_Transactions_finalRow(ByVal row As tbl_Pro_Article_BarCode_Transactions_finalRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1080,7 +1045,7 @@ Partial Public Class Production
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Production = New Production()
+            Dim ds As DSPacking = New DSPacking()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1098,259 +1063,7 @@ Partial Public Class Production
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbl_Pro_Article_BarCode_TransactionsDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class view_Production_PackingDataTable
-        Inherits Global.System.Data.TypedTableBase(Of view_Production_PackingRow)
-        
-        Private columnCount As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "view_Production_Packing"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property CountColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCount
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As view_Production_PackingRow
-            Get
-                Return CType(Me.Rows(index),view_Production_PackingRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event view_Production_PackingRowChanging As view_Production_PackingRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event view_Production_PackingRowChanged As view_Production_PackingRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event view_Production_PackingRowDeleting As view_Production_PackingRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event view_Production_PackingRowDeleted As view_Production_PackingRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub Addview_Production_PackingRow(ByVal row As view_Production_PackingRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Addview_Production_PackingRow(ByVal Count As Integer) As view_Production_PackingRow
-            Dim rowview_Production_PackingRow As view_Production_PackingRow = CType(Me.NewRow,view_Production_PackingRow)
-            Dim columnValuesArray() As Object = New Object() {Count}
-            rowview_Production_PackingRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowview_Production_PackingRow)
-            Return rowview_Production_PackingRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As view_Production_PackingDataTable = CType(MyBase.Clone,view_Production_PackingDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New view_Production_PackingDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnCount = MyBase.Columns("Count")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnCount = New Global.System.Data.DataColumn("Count", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCount)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Newview_Production_PackingRow() As view_Production_PackingRow
-            Return CType(Me.NewRow,view_Production_PackingRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New view_Production_PackingRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(view_Production_PackingRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.view_Production_PackingRowChangedEvent) Is Nothing) Then
-                RaiseEvent view_Production_PackingRowChanged(Me, New view_Production_PackingRowChangeEvent(CType(e.Row,view_Production_PackingRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.view_Production_PackingRowChangingEvent) Is Nothing) Then
-                RaiseEvent view_Production_PackingRowChanging(Me, New view_Production_PackingRowChangeEvent(CType(e.Row,view_Production_PackingRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.view_Production_PackingRowDeletedEvent) Is Nothing) Then
-                RaiseEvent view_Production_PackingRowDeleted(Me, New view_Production_PackingRowChangeEvent(CType(e.Row,view_Production_PackingRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.view_Production_PackingRowDeletingEvent) Is Nothing) Then
-                RaiseEvent view_Production_PackingRowDeleting(Me, New view_Production_PackingRowChangeEvent(CType(e.Row,view_Production_PackingRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Removeview_Production_PackingRow(ByVal row As view_Production_PackingRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Production = New Production()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "view_Production_PackingDataTable"
+            attribute2.FixedValue = "tbl_Pro_Article_BarCode_Transactions_finalDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1397,16 +1110,16 @@ Partial Public Class Production
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class View_Pro_Article_BarCodeRow
+    Partial Public Class View_Pro_Article_BarCode_finalRow
         Inherits Global.System.Data.DataRow
         
-        Private tableView_Pro_Article_BarCode As View_Pro_Article_BarCodeDataTable
+        Private tableView_Pro_Article_BarCode_final As View_Pro_Article_BarCode_finalDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableView_Pro_Article_BarCode = CType(Me.Table,View_Pro_Article_BarCodeDataTable)
+            Me.tableView_Pro_Article_BarCode_final = CType(Me.Table,View_Pro_Article_BarCode_finalDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1414,14 +1127,14 @@ Partial Public Class Production
         Public Property FactoryCode() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableView_Pro_Article_BarCode.FactoryCodeColumn),String)
+                    Return CType(Me(Me.tableView_Pro_Article_BarCode_final.FactoryCodeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FactoryCode' in table 'View_Pro_Article_BarCode' is DBNull."& _ 
-                            "", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FactoryCode' in table 'View_Pro_Article_BarCode_final' is D"& _ 
+                            "BNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.FactoryCodeColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.FactoryCodeColumn) = value
             End Set
         End Property
         
@@ -1429,10 +1142,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ModelNo() As String
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ModelNoColumn),String)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ModelNoColumn),String)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ModelNoColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ModelNoColumn) = value
             End Set
         End Property
         
@@ -1440,10 +1153,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ModelName() As String
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ModelNameColumn),String)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ModelNameColumn),String)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ModelNameColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ModelNameColumn) = value
             End Set
         End Property
         
@@ -1451,10 +1164,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ArtCode() As String
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ArtCodeColumn),String)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ArtCodeColumn),String)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ArtCodeColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ArtCodeColumn) = value
             End Set
         End Property
         
@@ -1463,13 +1176,13 @@ Partial Public Class Production
         Public Property Size() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableView_Pro_Article_BarCode.SizeColumn),String)
+                    Return CType(Me(Me.tableView_Pro_Article_BarCode_final.SizeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Size' in table 'View_Pro_Article_BarCode' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Size' in table 'View_Pro_Article_BarCode_final' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.SizeColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.SizeColumn) = value
             End Set
         End Property
         
@@ -1478,13 +1191,13 @@ Partial Public Class Production
         Public Property Type() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableView_Pro_Article_BarCode.TypeColumn),String)
+                    Return CType(Me(Me.tableView_Pro_Article_BarCode_final.TypeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'View_Pro_Article_BarCode' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'View_Pro_Article_BarCode_final' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.TypeColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.TypeColumn) = value
             End Set
         End Property
         
@@ -1493,13 +1206,14 @@ Partial Public Class Production
         Public Property Barcode() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableView_Pro_Article_BarCode.BarcodeColumn),String)
+                    Return CType(Me(Me.tableView_Pro_Article_BarCode_final.BarcodeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Barcode' in table 'View_Pro_Article_BarCode' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Barcode' in table 'View_Pro_Article_BarCode_final' is DBNul"& _ 
+                            "l.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.BarcodeColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.BarcodeColumn) = value
             End Set
         End Property
         
@@ -1507,10 +1221,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ClientID() As Integer
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ClientIDColumn),Integer)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ClientIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ClientIDColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ClientIDColumn) = value
             End Set
         End Property
         
@@ -1518,10 +1232,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ModelID() As Integer
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ModelIDColumn),Integer)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ModelIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ModelIDColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ModelIDColumn) = value
             End Set
         End Property
         
@@ -1529,10 +1243,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ArtID() As Integer
             Get
-                Return CType(Me(Me.tableView_Pro_Article_BarCode.ArtIDColumn),Integer)
+                Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ArtIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ArtIDColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ArtIDColumn) = value
             End Set
         End Property
         
@@ -1541,100 +1255,101 @@ Partial Public Class Production
         Public Property ArtImage() As Byte()
             Get
                 Try 
-                    Return CType(Me(Me.tableView_Pro_Article_BarCode.ArtImageColumn),Byte())
+                    Return CType(Me(Me.tableView_Pro_Article_BarCode_final.ArtImageColumn),Byte())
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ArtImage' in table 'View_Pro_Article_BarCode' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ArtImage' in table 'View_Pro_Article_BarCode_final' is DBNu"& _ 
+                            "ll.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableView_Pro_Article_BarCode.ArtImageColumn) = value
+                Me(Me.tableView_Pro_Article_BarCode_final.ArtImageColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsFactoryCodeNull() As Boolean
-            Return Me.IsNull(Me.tableView_Pro_Article_BarCode.FactoryCodeColumn)
+            Return Me.IsNull(Me.tableView_Pro_Article_BarCode_final.FactoryCodeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetFactoryCodeNull()
-            Me(Me.tableView_Pro_Article_BarCode.FactoryCodeColumn) = Global.System.Convert.DBNull
+            Me(Me.tableView_Pro_Article_BarCode_final.FactoryCodeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsSizeNull() As Boolean
-            Return Me.IsNull(Me.tableView_Pro_Article_BarCode.SizeColumn)
+            Return Me.IsNull(Me.tableView_Pro_Article_BarCode_final.SizeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetSizeNull()
-            Me(Me.tableView_Pro_Article_BarCode.SizeColumn) = Global.System.Convert.DBNull
+            Me(Me.tableView_Pro_Article_BarCode_final.SizeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsTypeNull() As Boolean
-            Return Me.IsNull(Me.tableView_Pro_Article_BarCode.TypeColumn)
+            Return Me.IsNull(Me.tableView_Pro_Article_BarCode_final.TypeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetTypeNull()
-            Me(Me.tableView_Pro_Article_BarCode.TypeColumn) = Global.System.Convert.DBNull
+            Me(Me.tableView_Pro_Article_BarCode_final.TypeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsBarcodeNull() As Boolean
-            Return Me.IsNull(Me.tableView_Pro_Article_BarCode.BarcodeColumn)
+            Return Me.IsNull(Me.tableView_Pro_Article_BarCode_final.BarcodeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetBarcodeNull()
-            Me(Me.tableView_Pro_Article_BarCode.BarcodeColumn) = Global.System.Convert.DBNull
+            Me(Me.tableView_Pro_Article_BarCode_final.BarcodeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsArtImageNull() As Boolean
-            Return Me.IsNull(Me.tableView_Pro_Article_BarCode.ArtImageColumn)
+            Return Me.IsNull(Me.tableView_Pro_Article_BarCode_final.ArtImageColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetArtImageNull()
-            Me(Me.tableView_Pro_Article_BarCode.ArtImageColumn) = Global.System.Convert.DBNull
+            Me(Me.tableView_Pro_Article_BarCode_final.ArtImageColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tbl_Pro_Article_BarCode_TransactionsRow
+    Partial Public Class tbl_Pro_Article_BarCode_Transactions_finalRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletbl_Pro_Article_BarCode_Transactions As tbl_Pro_Article_BarCode_TransactionsDataTable
+        Private tabletbl_Pro_Article_BarCode_Transactions_final As tbl_Pro_Article_BarCode_Transactions_finalDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletbl_Pro_Article_BarCode_Transactions = CType(Me.Table,tbl_Pro_Article_BarCode_TransactionsDataTable)
+            Me.tabletbl_Pro_Article_BarCode_Transactions_final = CType(Me.Table,tbl_Pro_Article_BarCode_Transactions_finalDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property TranID() As Integer
             Get
-                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TranIDColumn),Integer)
+                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TranIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TranIDColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TranIDColumn) = value
             End Set
         End Property
         
@@ -1642,10 +1357,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ClientID() As Integer
             Get
-                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ClientIDColumn),Integer)
+                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ClientIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ClientIDColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ClientIDColumn) = value
             End Set
         End Property
         
@@ -1653,10 +1368,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ModelID() As Integer
             Get
-                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ModelIDColumn),Integer)
+                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ModelIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ModelIDColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ModelIDColumn) = value
             End Set
         End Property
         
@@ -1664,10 +1379,10 @@ Partial Public Class Production
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ArtID() As Integer
             Get
-                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ArtIDColumn),Integer)
+                Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ArtIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ArtIDColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ArtIDColumn) = value
             End Set
         End Property
         
@@ -1676,14 +1391,14 @@ Partial Public Class Production
         Public Property Size() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.SizeColumn),String)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.SizeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Size' in table 'tbl_Pro_Article_BarCode_Transactions' is DB"& _ 
-                            "Null.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Size' in table 'tbl_Pro_Article_BarCode_Transactions_final'"& _ 
+                            " is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.SizeColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.SizeColumn) = value
             End Set
         End Property
         
@@ -1692,14 +1407,14 @@ Partial Public Class Production
         Public Property Type() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TypeColumn),String)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TypeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'tbl_Pro_Article_BarCode_Transactions' is DB"& _ 
-                            "Null.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'tbl_Pro_Article_BarCode_Transactions_final'"& _ 
+                            " is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TypeColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TypeColumn) = value
             End Set
         End Property
         
@@ -1708,14 +1423,14 @@ Partial Public Class Production
         Public Property Count() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.CountColumn),Integer)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.CountColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Count' in table 'tbl_Pro_Article_BarCode_Transactions' is D"& _ 
-                            "BNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Count' in table 'tbl_Pro_Article_BarCode_Transactions_final"& _ 
+                            "' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.CountColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.CountColumn) = value
             End Set
         End Property
         
@@ -1724,14 +1439,14 @@ Partial Public Class Production
         Public Property EntryDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.EntryDateColumn),Date)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.EntryDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'EntryDate' in table 'tbl_Pro_Article_BarCode_Transactions' "& _ 
-                            "is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EntryDate' in table 'tbl_Pro_Article_BarCode_Transactions_f"& _ 
+                            "inal' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.EntryDateColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.EntryDateColumn) = value
             End Set
         End Property
         
@@ -1740,14 +1455,14 @@ Partial Public Class Production
         Public Property TransactionTime() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TransactionTimeColumn),Date)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TransactionTimeColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'TransactionTime' in table 'tbl_Pro_Article_BarCode_Transact"& _ 
-                            "ions' is DBNull.", e)
+                            "ions_final' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TransactionTimeColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TransactionTimeColumn) = value
             End Set
         End Property
         
@@ -1756,14 +1471,14 @@ Partial Public Class Production
         Public Property ProcessType() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ProcessTypeColumn),String)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ProcessTypeColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'ProcessType' in table 'tbl_Pro_Article_BarCode_Transactions"& _ 
-                            "' is DBNull.", e)
+                            "_final' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ProcessTypeColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ProcessTypeColumn) = value
             End Set
         End Property
         
@@ -1772,142 +1487,99 @@ Partial Public Class Production
         Public Property FactoryCode() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions.FactoryCodeColumn),String)
+                    Return CType(Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.FactoryCodeColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'FactoryCode' in table 'tbl_Pro_Article_BarCode_Transactions"& _ 
-                            "' is DBNull.", e)
+                            "_final' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletbl_Pro_Article_BarCode_Transactions.FactoryCodeColumn) = value
+                Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.FactoryCodeColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsSizeNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.SizeColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.SizeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetSizeNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.SizeColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.SizeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsTypeNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.TypeColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TypeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetTypeNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TypeColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TypeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsCountNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.CountColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.CountColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetCountNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.CountColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.CountColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsEntryDateNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.EntryDateColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.EntryDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetEntryDateNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.EntryDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.EntryDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsTransactionTimeNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.TransactionTimeColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TransactionTimeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetTransactionTimeNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.TransactionTimeColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.TransactionTimeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsProcessTypeNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.ProcessTypeColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ProcessTypeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetProcessTypeNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.ProcessTypeColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.ProcessTypeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsFactoryCodeNull() As Boolean
-            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions.FactoryCodeColumn)
+            Return Me.IsNull(Me.tabletbl_Pro_Article_BarCode_Transactions_final.FactoryCodeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetFactoryCodeNull()
-            Me(Me.tabletbl_Pro_Article_BarCode_Transactions.FactoryCodeColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class view_Production_PackingRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableview_Production_Packing As view_Production_PackingDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableview_Production_Packing = CType(Me.Table,view_Production_PackingDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Count() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableview_Production_Packing.CountColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Count' in table 'view_Production_Packing' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableview_Production_Packing.CountColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsCountNull() As Boolean
-            Return Me.IsNull(Me.tableview_Production_Packing.CountColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetCountNull()
-            Me(Me.tableview_Production_Packing.CountColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletbl_Pro_Article_BarCode_Transactions_final.FactoryCodeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1915,16 +1587,16 @@ Partial Public Class Production
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class View_Pro_Article_BarCodeRowChangeEvent
+    Public Class View_Pro_Article_BarCode_finalRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As View_Pro_Article_BarCodeRow
+        Private eventRow As View_Pro_Article_BarCode_finalRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As View_Pro_Article_BarCodeRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As View_Pro_Article_BarCode_finalRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1932,7 +1604,7 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As View_Pro_Article_BarCodeRow
+        Public ReadOnly Property Row() As View_Pro_Article_BarCode_finalRow
             Get
                 Return Me.eventRow
             End Get
@@ -1951,16 +1623,16 @@ Partial Public Class Production
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tbl_Pro_Article_BarCode_TransactionsRowChangeEvent
+    Public Class tbl_Pro_Article_BarCode_Transactions_finalRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tbl_Pro_Article_BarCode_TransactionsRow
+        Private eventRow As tbl_Pro_Article_BarCode_Transactions_finalRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tbl_Pro_Article_BarCode_TransactionsRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tbl_Pro_Article_BarCode_Transactions_finalRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1968,43 +1640,7 @@ Partial Public Class Production
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tbl_Pro_Article_BarCode_TransactionsRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class view_Production_PackingRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As view_Production_PackingRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As view_Production_PackingRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As view_Production_PackingRow
+        Public ReadOnly Property Row() As tbl_Pro_Article_BarCode_Transactions_finalRow
             Get
                 Return Me.eventRow
             End Get
@@ -2020,7 +1656,7 @@ Partial Public Class Production
     End Class
 End Class
 
-Namespace ProductionTableAdapters
+Namespace DSPackingTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -2031,7 +1667,7 @@ Namespace ProductionTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class View_Pro_Article_BarCodeTableAdapter
+    Partial Public Class View_Pro_Article_BarCode_finalTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.Odbc.OdbcDataAdapter
@@ -2148,7 +1784,7 @@ Namespace ProductionTableAdapters
             Me._adapter = New Global.System.Data.Odbc.OdbcDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "View_Pro_Article_BarCode"
+            tableMapping.DataSetTable = "View_Pro_Article_BarCode_final"
             tableMapping.ColumnMappings.Add("FactoryCode", "FactoryCode")
             tableMapping.ColumnMappings.Add("ModelNo", "ModelNo")
             tableMapping.ColumnMappings.Add("ModelName", "ModelName")
@@ -2177,8 +1813,8 @@ Namespace ProductionTableAdapters
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FactoryCode, ModelNo, ModelName, ArtCode, [Size], Type, Barcode, Cl"& _ 
-                "ientID, ModelID, ArtID, ArtImage"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            View_Pro_Article_BarCode"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       (Barcode = ?)"
+                "ientID, ModelID, ArtID, ArtImage"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            View_Pro_Article_BarCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
+                "E        (Barcode = ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Barcode", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Barcode", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -2187,7 +1823,7 @@ Namespace ProductionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Production.View_Pro_Article_BarCodeDataTable, ByVal Barcode As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSPacking.View_Pro_Article_BarCode_finalDataTable, ByVal Barcode As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Barcode Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -2205,14 +1841,14 @@ Namespace ProductionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal Barcode As String) As Production.View_Pro_Article_BarCodeDataTable
+        Public Overloads Overridable Function GetData(ByVal Barcode As String) As DSPacking.View_Pro_Article_BarCode_finalDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Barcode Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Barcode,String)
             End If
-            Dim dataTable As Production.View_Pro_Article_BarCodeDataTable = New Production.View_Pro_Article_BarCodeDataTable()
+            Dim dataTable As DSPacking.View_Pro_Article_BarCode_finalDataTable = New DSPacking.View_Pro_Article_BarCode_finalDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2227,7 +1863,7 @@ Namespace ProductionTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbl_Pro_Article_BarCode_TransactionsTableAdapter
+    Partial Public Class tbl_Pro_Article_BarCode_Transactions_finalTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.Odbc.OdbcDataAdapter
@@ -2344,7 +1980,7 @@ Namespace ProductionTableAdapters
             Me._adapter = New Global.System.Data.Odbc.OdbcDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbl_Pro_Article_BarCode_Transactions"
+            tableMapping.DataSetTable = "tbl_Pro_Article_BarCode_Transactions_final"
             tableMapping.ColumnMappings.Add("TranID", "TranID")
             tableMapping.ColumnMappings.Add("ClientID", "ClientID")
             tableMapping.ColumnMappings.Add("ModelID", "ModelID")
@@ -2457,8 +2093,8 @@ Namespace ProductionTableAdapters
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        TranID, ClientID, ModelID, ArtID, [Size], Type, [Count], EntryDate,"& _ 
-                " TransactionTime, ProcessType, FactoryCode"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tbl_Pro_Article_BarCo"& _ 
-                "de_Transactions"
+                " TransactionTime, ProcessType, FactoryCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tbl_Pro_Article_BarC"& _ 
+                "ode_Transactions"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2466,7 +2102,7 @@ Namespace ProductionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Production.tbl_Pro_Article_BarCode_TransactionsDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSPacking.tbl_Pro_Article_BarCode_Transactions_finalDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2479,9 +2115,9 @@ Namespace ProductionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Production.tbl_Pro_Article_BarCode_TransactionsDataTable
+        Public Overloads Overridable Function GetData() As DSPacking.tbl_Pro_Article_BarCode_Transactions_finalDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Production.tbl_Pro_Article_BarCode_TransactionsDataTable = New Production.tbl_Pro_Article_BarCode_TransactionsDataTable()
+            Dim dataTable As DSPacking.tbl_Pro_Article_BarCode_Transactions_finalDataTable = New DSPacking.tbl_Pro_Article_BarCode_Transactions_finalDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2489,15 +2125,15 @@ Namespace ProductionTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Production.tbl_Pro_Article_BarCode_TransactionsDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DSPacking.tbl_Pro_Article_BarCode_Transactions_finalDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Production) As Integer
-            Return Me.Adapter.Update(dataSet, "tbl_Pro_Article_BarCode_Transactions")
+        Public Overloads Overridable Function Update(ByVal dataSet As DSPacking) As Integer
+            Return Me.Adapter.Update(dataSet, "tbl_Pro_Article_BarCode_Transactions_final")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2779,224 +2415,6 @@ Namespace ProductionTableAdapters
     End Class
     
     '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class view_Production_PackingTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.Odbc.OdbcDataAdapter
-        
-        Private _connection As Global.System.Data.Odbc.OdbcConnection
-        
-        Private _transaction As Global.System.Data.Odbc.OdbcTransaction
-        
-        Private _commandCollection() As Global.System.Data.Odbc.OdbcCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.Odbc.OdbcDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.Odbc.OdbcConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.Odbc.OdbcCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.Odbc.OdbcTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.Odbc.OdbcCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.Odbc.OdbcDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "view_Production_Packing"
-            tableMapping.ColumnMappings.Add("Count", "Count")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.Odbc.OdbcConnection()
-            Me._connection.ConnectionString = Global.Auto_Att.My.MySettings.Default.ConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        [Count]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            view_Production_Packing"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Day"& _ 
-                "= ?) AND (Month = ?) AND (Year= ?) AND (FactoryCode = ?)"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Day", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Day", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Month", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Month", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Year", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("FactoryCode", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FactoryCode", Global.System.Data.DataRowVersion.Current, false, Nothing))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Production.view_Production_PackingDataTable, ByVal Day As Global.System.Nullable(Of Integer), ByVal Month As Global.System.Nullable(Of Integer), ByVal Year As Global.System.Nullable(Of Integer), ByVal FactoryCode As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Day.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Day.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Month.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Month.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Year.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Year.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (FactoryCode Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(FactoryCode,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal Day As Global.System.Nullable(Of Integer), ByVal Month As Global.System.Nullable(Of Integer), ByVal Year As Global.System.Nullable(Of Integer), ByVal FactoryCode As String) As Production.view_Production_PackingDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Day.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Day.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Month.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Month.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Year.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Year.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (FactoryCode Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(FactoryCode,String)
-            End If
-            Dim dataTable As Production.view_Production_PackingDataTable = New Production.view_Production_PackingDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -3009,7 +2427,7 @@ Namespace ProductionTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbl_Pro_Article_BarCode_TransactionsTableAdapter As tbl_Pro_Article_BarCode_TransactionsTableAdapter
+        Private _tbl_Pro_Article_BarCode_Transactions_finalTableAdapter As tbl_Pro_Article_BarCode_Transactions_finalTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -3031,12 +2449,12 @@ Namespace ProductionTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbl_Pro_Article_BarCode_TransactionsTableAdapter() As tbl_Pro_Article_BarCode_TransactionsTableAdapter
+        Public Property tbl_Pro_Article_BarCode_Transactions_finalTableAdapter() As tbl_Pro_Article_BarCode_Transactions_finalTableAdapter
             Get
-                Return Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter
+                Return Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter
             End Get
             Set
-                Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter = value
+                Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter = value
             End Set
         End Property
         
@@ -3059,9 +2477,9 @@ Namespace ProductionTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection
+                If ((Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -3076,7 +2494,7 @@ Namespace ProductionTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
+                If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -3088,14 +2506,14 @@ Namespace ProductionTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As Production, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DSPacking, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions_final.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Update(updatedRows))
+                    result = (result + Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -3107,13 +2525,13 @@ Namespace ProductionTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As Production, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DSPacking, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions_final.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Update(addedRows))
+                    result = (result + Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -3125,13 +2543,13 @@ Namespace ProductionTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As Production, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DSPacking, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_Pro_Article_BarCode_Transactions_final.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Update(deletedRows))
+                    result = (result + Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -3169,15 +2587,15 @@ Namespace ProductionTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As Production) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DSPacking) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -3213,13 +2631,13 @@ Namespace ProductionTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter, Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection)
-                    Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection = CType(workConnection,Global.System.Data.Odbc.OdbcConnection)
-                    Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Transaction = CType(workTransaction,Global.System.Data.Odbc.OdbcTransaction)
-                    If Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Adapter)
+                If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter, Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection)
+                    Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection = CType(workConnection,Global.System.Data.Odbc.OdbcConnection)
+                    Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Transaction = CType(workTransaction,Global.System.Data.Odbc.OdbcTransaction)
+                    If Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -3282,9 +2700,9 @@ Namespace ProductionTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter) Is Nothing) Then
-                    Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Connection = CType(revertConnections(Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter),Global.System.Data.Odbc.OdbcConnection)
-                    Me._tbl_Pro_Article_BarCode_TransactionsTableAdapter.Transaction = Nothing
+                If (Not (Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter) Is Nothing) Then
+                    Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Connection = CType(revertConnections(Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter),Global.System.Data.Odbc.OdbcConnection)
+                    Me._tbl_Pro_Article_BarCode_Transactions_finalTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
